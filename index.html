@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EEG Neurorehabilitation Robotic Glove | Brain-Computer Interface Rehabilitation</title>
+  <meta name="description" content="EEG-Based Neurorehabilitation Robotic Glove — restoring hand movement through thought. Brain-computer interface technology designed to help recover hand function after paralysis." />
+  <meta name="keywords" content="EEG, neurorehabilitation, robotic glove, BCI, brain-computer interface, paralysis rehabilitation, neural prosthetics" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!--  NAVIGATION                                     -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <span class="nav-logo-icon">⬡</span>
+        <span class="nav-logo-text">EEG Neurorehabilitation Glove</span>
+      </div>
+      <ul class="nav-links" role="list">
+        <li><a href="#overview"        class="nav-link" id="nav-overview">Overview</a></li>
+        <li><a href="#technology"      class="nav-link" id="nav-technology">Technology</a></li>
+        <li><a href="#bci-system"      class="nav-link" id="nav-bci">BCI System</a></li>
+        <li><a href="#rehabilitation"  class="nav-link" id="nav-rehab">Rehabilitation</a></li>
+        <li><a href="#specifications"  class="nav-link" id="nav-specs">Specifications</a></li>
+        <li><a href="#contact"         class="nav-link" id="nav-contact">Contact</a></li>
+      </ul>
+      <a href="#experience" class="nav-cta" id="nav-cta-btn">
+        <span>Explore Innovation</span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">✕</button>
+    <ul role="list">
+      <li><a href="#overview"       class="mobile-link">Overview</a></li>
+      <li><a href="#technology"     class="mobile-link">Technology</a></li>
+      <li><a href="#bci-system"     class="mobile-link">BCI System</a></li>
+      <li><a href="#rehabilitation" class="mobile-link">Rehabilitation</a></li>
+      <li><a href="#specifications" class="mobile-link">Specifications</a></li>
+      <li><a href="#contact"        class="mobile-link">Contact</a></li>
+    </ul>
+    <a href="#experience" class="nav-cta mobile-cta">Explore Innovation</a>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!--  SCROLL PROGRESS BAR                           -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <div class="scroll-progress-bar" id="scroll-progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!--  STICKY CANVAS SECTION                         -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section class="canvas-wrapper" id="canvas-wrapper" aria-label="Interactive 3D device visualization">
+    <div class="canvas-sticky" id="canvas-sticky">
+      <canvas id="device-canvas" aria-label="EEG Neurorehabilitation device animation"></canvas>
+
+      <!-- PHASE OVERLAYS -->
+
+      <!-- Phase 0: Hero (0–15%) -->
+      <div class="phase-overlay phase-hero" id="phase-hero" data-phase="0">
+        <div class="phase-hero-content">
+          <div class="hero-eyebrow">
+            <span class="eyebrow-dot"></span>
+            <span>Neurorehabilitation Technology</span>
+          </div>
+          <h1 class="hero-headline">
+            EEG-Based<br />Neurorehabilitation<br />Robotic Glove
+          </h1>
+          <p class="hero-sub">Restoring movement through thought.</p>
+          <p class="hero-body">
+            Brain-controlled rehabilitation technology designed to help restore hand function<br />
+            after paralysis and neurological injury.
+          </p>
+          <div class="hero-cta-group">
+            <a href="#technology" class="btn-primary" id="hero-cta-primary">Discover the Technology</a>
+            <a href="#overview"   class="btn-ghost"   id="hero-cta-ghost">Watch Overview</a>
+          </div>
+          <div class="hero-scroll-indicator" aria-label="Scroll to explore">
+            <div class="scroll-dot"></div>
+            <span>Scroll to explore</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 1: Engineering Reveal (15–40%) -->
+      <div class="phase-overlay phase-engineering" id="phase-engineering" data-phase="1">
+        <div class="phase-text-block left-block">
+          <div class="phase-label">Engineering</div>
+          <h2 class="phase-headline">Precision-engineered<br />for recovery.</h2>
+          <p class="phase-body">
+            Soft robotic actuation, intelligent assistance, and ergonomic rehabilitation design work together to support natural hand movement and long-term motor recovery.
+          </p>
+          <p class="phase-body">
+            Every component is optimized for comfort, therapy effectiveness, and patient-centered rehabilitation.
+          </p>
+          <div class="component-list">
+            <div class="comp-item" style="--d:0ms"><span class="comp-dot"></span>Soft robotic finger actuators</div>
+            <div class="comp-item" style="--d:80ms"><span class="comp-dot"></span>Tendon-driven transmission</div>
+            <div class="comp-item" style="--d:160ms"><span class="comp-dot"></span>Force &amp; flex sensors</div>
+            <div class="comp-item" style="--d:240ms"><span class="comp-dot"></span>Ergonomic support frame</div>
+            <div class="comp-item" style="--d:320ms"><span class="comp-dot"></span>Rehabilitation straps</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 2: BCI System (40–65%) -->
+      <div class="phase-overlay phase-bci" id="phase-bci" data-phase="2">
+        <div class="phase-text-block right-block">
+          <div class="phase-label">BCI System</div>
+          <h2 class="phase-headline">Brain-computer<br />interaction, redefined.</h2>
+          <ul class="bci-points">
+            <li class="bci-point" style="--d:0ms">
+              <span class="bci-icon">◈</span>
+              <span>Multi-channel EEG sensors capture neural activity in real time.</span>
+            </li>
+            <li class="bci-point" style="--d:100ms">
+              <span class="bci-icon">◈</span>
+              <span>Advanced AI algorithms decode movement intention.</span>
+            </li>
+            <li class="bci-point" style="--d:200ms">
+              <span class="bci-icon">◈</span>
+              <span>Brain signals are translated into assisted hand motion.</span>
+            </li>
+            <li class="bci-point" style="--d:300ms">
+              <span class="bci-icon">◈</span>
+              <span>Every session adapts to the patient's recovery progress.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Phase 3: Rehabilitation (65–85%) -->
+      <div class="phase-overlay phase-rehab" id="phase-rehab" data-phase="3">
+        <div class="phase-text-block centered-block">
+          <div class="phase-label">Performance</div>
+          <h2 class="phase-headline">Intelligent<br />rehabilitation assistance.</h2>
+          <p class="phase-body">
+            Precision-controlled actuation supports therapeutic hand movements.<br />
+            Real-time feedback enables adaptive rehabilitation while promoting neuroplasticity and motor recovery.
+          </p>
+          <p class="phase-body">
+            Advanced assistive technology helps patients regain independence through repetitive, guided movement training.
+          </p>
+          <div class="stats-row">
+            <div class="stat-item">
+              <span class="stat-num">14</span>
+              <span class="stat-label">EEG Channels</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">256<span class="stat-unit">Hz</span></span>
+              <span class="stat-label">Sampling Rate</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">&lt;20<span class="stat-unit">ms</span></span>
+              <span class="stat-label">Neural Latency</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">5</span>
+              <span class="stat-label">DOF Fingers</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 4: CTA (85–100%) -->
+      <div class="phase-overlay phase-cta" id="phase-cta" data-phase="4">
+        <div class="phase-text-block centered-block cta-block">
+          <div class="cta-glow-ring"></div>
+          <div class="phase-label">The Future of Recovery</div>
+          <h2 class="cta-headline">Recover movement.<br />Regain independence.</h2>
+          <p class="cta-subheadline">
+            EEG-Based Neurorehabilitation Robotic Glove.<br />
+            Designed for recovery, engineered for the future.
+          </p>
+          <div class="cta-button-group">
+            <a href="#experience"      class="btn-primary btn-large" id="cta-experience">Experience Neurorehabilitation</a>
+            <a href="#specifications"  class="btn-outline"           id="cta-specs">View Technical Specifications</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- HUD elements -->
+      <div class="canvas-hud" id="canvas-hud">
+        <div class="hud-left">
+          <div class="hud-label">Device Status</div>
+          <div class="hud-value" id="hud-status">Assembled</div>
+        </div>
+        <div class="hud-center">
+          <div class="hud-frame-label">FRAME</div>
+          <div class="hud-frame" id="hud-frame">001 / 120</div>
+        </div>
+        <div class="hud-right">
+          <div class="hud-label">Neural Signal</div>
+          <div class="hud-value hud-cyan">Active</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!--  SPECS SECTION                                  -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section class="specs-section" id="specifications" aria-labelledby="specs-heading">
+    <div class="section-container">
+      <div class="section-eyebrow">Technical Specifications</div>
+      <h2 class="section-headline" id="specs-heading">
+        Engineered to the<br />highest standards.
+      </h2>
+      <div class="specs-grid">
+        <div class="spec-card" id="spec-eeg">
+          <div class="spec-card-icon">⬡</div>
+          <h3 class="spec-card-title">EEG System</h3>
+          <div class="spec-rows">
+            <div class="spec-row"><span>Channels</span><span>14 active electrodes</span></div>
+            <div class="spec-row"><span>Sampling Rate</span><span>256 Hz</span></div>
+            <div class="spec-row"><span>Resolution</span><span>24-bit ADC</span></div>
+            <div class="spec-row"><span>Impedance</span><span>&lt; 5 kΩ</span></div>
+            <div class="spec-row"><span>Frequency Range</span><span>0.1 – 100 Hz</span></div>
+            <div class="spec-row"><span>Connectivity</span><span>Bluetooth 5.0 / Wi-Fi</span></div>
+          </div>
+        </div>
+        <div class="spec-card" id="spec-glove">
+          <div class="spec-card-icon">◈</div>
+          <h3 class="spec-card-title">Robotic Glove</h3>
+          <div class="spec-rows">
+            <div class="spec-row"><span>Degrees of Freedom</span><span>5 per hand</span></div>
+            <div class="spec-row"><span>Actuation</span><span>Tendon-driven pneumatic</span></div>
+            <div class="spec-row"><span>Force Output</span><span>0–15 N per finger</span></div>
+            <div class="spec-row"><span>Position Accuracy</span><span>±0.5°</span></div>
+            <div class="spec-row"><span>Material</span><span>Medical-grade silicone</span></div>
+            <div class="spec-row"><span>Battery Life</span><span>6+ hours continuous</span></div>
+          </div>
+        </div>
+        <div class="spec-card" id="spec-bci">
+          <div class="spec-card-icon">◇</div>
+          <h3 class="spec-card-title">BCI Processing</h3>
+          <div class="spec-rows">
+            <div class="spec-row"><span>Latency</span><span>&lt; 20 ms end-to-end</span></div>
+            <div class="spec-row"><span>Classification</span><span>Deep learning CNN/RNN</span></div>
+            <div class="spec-row"><span>Accuracy</span><span>&gt; 92% motor imagery</span></div>
+            <div class="spec-row"><span>Processor</span><span>ARM Cortex-M7 + GPU</span></div>
+            <div class="spec-row"><span>Adaptation</span><span>Real-time online learning</span></div>
+            <div class="spec-row"><span>Protocols</span><span>ERD/ERS, P300, SSVEP</span></div>
+          </div>
+        </div>
+        <div class="spec-card" id="spec-rehab">
+          <div class="spec-card-icon">○</div>
+          <h3 class="spec-card-title">Rehabilitation</h3>
+          <div class="spec-rows">
+            <div class="spec-row"><span>Therapy Modes</span><span>Active / Passive / Assisted</span></div>
+            <div class="spec-row"><span>Session Duration</span><span>20–60 minutes</span></div>
+            <div class="spec-row"><span>Progress Tracking</span><span>Cloud-based analytics</span></div>
+            <div class="spec-row"><span>Feedback</span><span>Visual + haptic + audio</span></div>
+            <div class="spec-row"><span>Compliance</span><span>IEC 60601-1 Medical</span></div>
+            <div class="spec-row"><span>Data Storage</span><span>HIPAA-compliant cloud</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!--  TECHNOLOGY PILLARS                             -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section class="pillars-section" id="technology" aria-labelledby="pillars-heading">
+    <div class="section-container">
+      <div class="section-eyebrow">Core Technology</div>
+      <h2 class="section-headline" id="pillars-heading">Four pillars of<br />neurorehabilitation.</h2>
+      <div class="pillars-grid">
+        <div class="pillar-card" id="pillar-neural">
+          <div class="pillar-number">01</div>
+          <div class="pillar-icon-wrap">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+              <circle cx="24" cy="24" r="10" stroke="#00D6FF" stroke-width="1.5" fill="none"/>
+              <circle cx="24" cy="24" r="4" fill="#00D6FF" opacity="0.6"/>
+              <path d="M24 8V14M24 34V40M8 24H14M34 24H40" stroke="#00D6FF" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M12.7 12.7L17 17M31 31L35.3 35.3M35.3 12.7L31 17M17 31L12.7 35.3" stroke="#00D6FF" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+            </svg>
+          </div>
+          <h3 class="pillar-title">Neural Signal Acquisition</h3>
+          <p class="pillar-body">High-fidelity EEG headset captures neural activity across 14 channels simultaneously, filtering noise at the hardware level.</p>
+        </div>
+        <div class="pillar-card" id="pillar-ai">
+          <div class="pillar-number">02</div>
+          <div class="pillar-icon-wrap">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+              <rect x="10" y="10" width="28" height="28" rx="4" stroke="#0050FF" stroke-width="1.5" fill="none"/>
+              <circle cx="18" cy="18" r="2.5" fill="#0050FF"/>
+              <circle cx="30" cy="18" r="2.5" fill="#0050FF"/>
+              <circle cx="18" cy="30" r="2.5" fill="#0050FF"/>
+              <circle cx="30" cy="30" r="2.5" fill="#0050FF"/>
+              <circle cx="24" cy="24" r="3" fill="#00D6FF" opacity="0.8"/>
+              <path d="M18 18L24 24M30 18L24 24M18 30L24 24M30 30L24 24" stroke="#0050FF" stroke-width="1" opacity="0.6"/>
+            </svg>
+          </div>
+          <h3 class="pillar-title">AI Intent Decoding</h3>
+          <p class="pillar-body">Deep learning classifiers trained on motor imagery patterns decode voluntary movement intentions with over 92% accuracy in real time.</p>
+        </div>
+        <div class="pillar-card" id="pillar-robotic">
+          <div class="pillar-number">03</div>
+          <div class="pillar-icon-wrap">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+              <path d="M12 36L12 20C12 18 14 16 16 16L20 16" stroke="#00D6FF" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+              <path d="M20 16L22 12C22 10 24 10 24 12L24 16" stroke="#00D6FF" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+              <path d="M24 16L26 10C26 8 28 8 28 10L28 16" stroke="#00D6FF" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+              <path d="M28 16L30 13C30 11 32 11 32 13L32 16" stroke="#00D6FF" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+              <path d="M32 16L34 15C34 13 36 13 36 15L36 18" stroke="#00D6FF" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+              <rect x="8" y="34" width="32" height="6" rx="3" stroke="#0050FF" stroke-width="1.5" fill="none"/>
+            </svg>
+          </div>
+          <h3 class="pillar-title">Soft Robotic Actuation</h3>
+          <p class="pillar-body">Tendon-driven mechanisms and pneumatic actuators deliver precise, natural finger movements with force feedback for safe therapeutic assistance.</p>
+        </div>
+        <div class="pillar-card" id="pillar-adaptive">
+          <div class="pillar-number">04</div>
+          <div class="pillar-icon-wrap">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+              <path d="M8 24C8 15.2 15.2 8 24 8" stroke="#0050FF" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+              <path d="M24 8C32.8 8 40 15.2 40 24" stroke="#00D6FF" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+              <path d="M40 24C40 32.8 32.8 40 24 40" stroke="#0050FF" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+              <path d="M24 40C15.2 40 8 32.8 8 24" stroke="#00D6FF" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+              <circle cx="24" cy="24" r="5" stroke="#00D6FF" stroke-width="1.5" fill="none"/>
+              <path d="M21 8L24 5L27 8" fill="#0050FF"/>
+            </svg>
+          </div>
+          <h3 class="pillar-title">Adaptive Rehabilitation</h3>
+          <p class="pillar-body">Cloud-based analytics continuously adapt therapy protocols to each patient's neuroplasticity, recovery trajectory, and performance data.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!--  BCI SECTION                                    -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section class="bci-section" id="bci-system" aria-labelledby="bci-heading">
+    <div class="section-container">
+      <div class="bci-split">
+        <div class="bci-left">
+          <div class="section-eyebrow">Neural Interface</div>
+          <h2 class="section-headline" id="bci-heading">The brain speaks.<br />The glove listens.</h2>
+          <p class="section-body">
+            Our proprietary EEG signal processing pipeline uses adaptive spatial filtering and real-time artifact rejection to extract clean motor imagery signals from the scalp — even during hand movement.
+          </p>
+          <p class="section-body">
+            The AI model runs entirely on-device with less than 20 ms latency — translating thought into therapeutic action faster than conscious awareness.
+          </p>
+          <div class="bci-flow">
+            <div class="flow-step" id="flow-step-1"><span class="flow-num">1</span><span>Neural Intent</span></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step" id="flow-step-2"><span class="flow-num">2</span><span>EEG Capture</span></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step" id="flow-step-3"><span class="flow-num">3</span><span>AI Decode</span></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step" id="flow-step-4"><span class="flow-num">4</span><span>Hand Motion</span></div>
+          </div>
+        </div>
+        <div class="bci-right">
+          <div class="bci-visual-card" id="bci-visual-card">
+            <canvas id="signal-canvas" width="400" height="220" aria-label="EEG signal visualization"></canvas>
+            <div class="signal-labels">
+              <span class="signal-label cyan">Motor Cortex (C3)</span>
+              <span class="signal-label blue">Supplementary Motor (Cz)</span>
+              <span class="signal-label dim">Reference (Fp1)</span>
+            </div>
+            <div class="signal-status">
+              <span class="signal-dot-pulse"></span>
+              <span>Live Neural Acquisition</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!--  REHABILITATION SECTION                         -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section class="rehab-section" id="rehabilitation" aria-labelledby="rehab-heading">
+    <div class="section-container">
+      <div class="section-eyebrow">Patient Recovery</div>
+      <h2 class="section-headline" id="rehab-heading">Therapy that<br />thinks ahead.</h2>
+      <div class="rehab-modes">
+        <div class="mode-card active" id="mode-active">
+          <div class="mode-header">
+            <span class="mode-tag">Active</span>
+            <span class="mode-status-dot"></span>
+          </div>
+          <h3 class="mode-title">Active Assisted</h3>
+          <p class="mode-body">The patient initiates movement via EEG intent; the glove assists completion. Maximizes neuroplasticity by leveraging the brain-body connection.</p>
+          <div class="mode-bar"><div class="mode-fill" style="width:85%"></div></div>
+          <span class="mode-metric">85% cortical engagement</span>
+        </div>
+        <div class="mode-card" id="mode-passive">
+          <div class="mode-header">
+            <span class="mode-tag">Passive</span>
+          </div>
+          <h3 class="mode-title">Passive Range of Motion</h3>
+          <p class="mode-body">The glove moves fingers through full range of motion to prevent contracture and maintain joint health during acute rehabilitation phases.</p>
+          <div class="mode-bar"><div class="mode-fill" style="width:60%"></div></div>
+          <span class="mode-metric">60% tissue perfusion</span>
+        </div>
+        <div class="mode-card" id="mode-game">
+          <div class="mode-header">
+            <span class="mode-tag">Gamified</span>
+          </div>
+          <h3 class="mode-title">Gamified Therapy</h3>
+          <p class="mode-body">Immersive neuro-games guide EEG-driven rehabilitation sessions, increasing patient adherence by 3× while sustaining optimal neural engagement.</p>
+          <div class="mode-bar"><div class="mode-fill" style="width:92%"></div></div>
+          <span class="mode-metric">92% session completion</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!--  CONTACT SECTION                                -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section class="contact-section" id="contact" aria-labelledby="contact-heading">
+    <div class="section-container">
+      <div class="contact-inner">
+        <div class="section-eyebrow">Get in Touch</div>
+        <h2 class="section-headline" id="contact-heading">Ready to transform<br />rehabilitation?</h2>
+        <p class="section-body contact-body">
+          For clinical inquiries, research partnerships, or to schedule a product demonstration, reach out to our neurorehabilitation team.
+        </p>
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contact-name">Full Name</label>
+              <input type="text" id="contact-name" name="name" placeholder="Dr. Jane Smith" required />
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Email Address</label>
+              <input type="email" id="contact-email" name="email" placeholder="jane.smith@hospital.org" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="contact-org">Organization / Institution</label>
+            <input type="text" id="contact-org" name="organization" placeholder="Neurorehabilitation Center" />
+          </div>
+          <div class="form-group">
+            <label for="contact-interest">Area of Interest</label>
+            <select id="contact-interest" name="interest">
+              <option value="">Select your interest</option>
+              <option value="clinical">Clinical Trial Partnership</option>
+              <option value="research">Research Collaboration</option>
+              <option value="demo">Product Demonstration</option>
+              <option value="procurement">Hospital Procurement</option>
+              <option value="other">Other Inquiry</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" rows="4" placeholder="Describe your rehabilitation technology needs or research interests..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary btn-large form-submit" id="contact-submit">
+            <span>Send Inquiry</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M10 5l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!--  FOOTER                                         -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="footer-logo-icon">⬡</span>
+          <span class="footer-brand-name">EEG NeuroGlove</span>
+          <p class="footer-tagline">Restoring movement through thought.</p>
+        </div>
+        <div class="footer-links-group">
+          <div class="footer-col">
+            <h4>Product</h4>
+            <a href="#overview">Overview</a>
+            <a href="#technology">Technology</a>
+            <a href="#bci-system">BCI System</a>
+            <a href="#rehabilitation">Rehabilitation</a>
+          </div>
+          <div class="footer-col">
+            <h4>Information</h4>
+            <a href="#specifications">Specifications</a>
+            <a href="#contact">Contact</a>
+            <a href="#">Clinical Data</a>
+            <a href="#">Publications</a>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="#">About</a>
+            <a href="#">Research</a>
+            <a href="#">Careers</a>
+            <a href="#">Press</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-legal">© 2026 EEG NeuroGlove Technologies. All rights reserved. IEC 60601-1 Class II Medical Device.</p>
+        <div class="footer-legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">FDA Disclaimer</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
