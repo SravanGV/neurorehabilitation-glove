@@ -127,19 +127,19 @@ document.addEventListener('DOMContentLoaded', () => {
       
       let renderWidth, renderHeight, x, y;
       
-      // Use cover behavior to fill the screen (great for mobile)
+      // Use contain behavior so the entire device is visible
       if (imgRatio > canvasRatio) {
-        // Image is proportionally wider than canvas
-        renderHeight = canvasHeight;
-        renderWidth = canvasHeight * imgRatio;
-        x = (canvasWidth - renderWidth) / 2;
-        y = 0;
-      } else {
-        // Image is proportionally taller than canvas
+        // Image is proportionally wider than canvas -> fit to width
         renderWidth = canvasWidth;
         renderHeight = canvasWidth / imgRatio;
         x = 0;
         y = (canvasHeight - renderHeight) / 2;
+      } else {
+        // Image is proportionally taller than canvas -> fit to height
+        renderHeight = canvasHeight;
+        renderWidth = canvasHeight * imgRatio;
+        x = (canvasWidth - renderWidth) / 2;
+        y = 0;
       }
       
       context.drawImage(img, x, y, renderWidth, renderHeight);
