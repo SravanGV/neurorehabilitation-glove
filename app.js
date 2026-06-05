@@ -156,8 +156,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  let lastWidth = window.innerWidth;
+
   // Resize canvas to match screen resolution and device pixel ratio (for retina clarity)
   const resizeCanvas = () => {
+    // Prevent mobile layout jumping: ignore height-only resizes (URL bar hide/show)
+    const isMobile = window.innerWidth <= 768;
+    if (isMobile && window.innerWidth === lastWidth && canvas.width > 0) {
+      return;
+    }
+    lastWidth = window.innerWidth;
+
     const dpr = window.devicePixelRatio || 1;
     canvas.width = window.innerWidth * dpr;
     canvas.height = window.innerHeight * dpr;
