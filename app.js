@@ -127,20 +127,27 @@ document.addEventListener('DOMContentLoaded', () => {
       
       let renderWidth, renderHeight, x, y;
       
-      // Use contain behavior so the entire device is visible
+      // Calculate base 'contain' dimensions
       if (imgRatio > canvasRatio) {
-        // Image is proportionally wider than canvas -> fit to width
         renderWidth = canvasWidth;
         renderHeight = canvasWidth / imgRatio;
-        x = 0;
-        y = (canvasHeight - renderHeight) / 2;
       } else {
-        // Image is proportionally taller than canvas -> fit to height
         renderHeight = canvasHeight;
         renderWidth = canvasHeight * imgRatio;
-        x = (canvasWidth - renderWidth) / 2;
-        y = 0;
       }
+      
+      // Apply custom mobile scaling to zoom in and make the glove larger
+      let scaleFactor = 1;
+      if (window.innerWidth <= 768) {
+        scaleFactor = 1.6; // Scale up by 60% on mobile screens to fill more space
+      }
+      
+      renderWidth *= scaleFactor;
+      renderHeight *= scaleFactor;
+      
+      // Center the scaled image
+      x = (canvasWidth - renderWidth) / 2;
+      y = (canvasHeight - renderHeight) / 2;
       
       context.drawImage(img, x, y, renderWidth, renderHeight);
       
