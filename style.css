@@ -1450,7 +1450,8 @@ section:not(.canvas-wrapper) {
   }
   #device-canvas {
     object-fit: cover;
-    transform: none;
+    transform: scale(1.6);
+    transform-origin: center center;
   }
   .phase-overlay {
     padding: 0 20px;
