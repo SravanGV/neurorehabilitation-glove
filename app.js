@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const dpr = window.devicePixelRatio || 1;
     canvas.width = window.innerWidth * dpr;
     canvas.height = window.innerHeight * dpr;
-    context.scale(dpr, dpr);
+    // Removed context.scale(dpr, dpr) to prevent double-scaling bug
     
     // Set display style width/height
     canvas.style.width = `${window.innerWidth}px`;

@@ -1445,9 +1445,19 @@ section:not(.canvas-wrapper) {
   .hero-eyebrow {
     margin-bottom: 16px;
   }
+  .phase-overlay {
+    padding: 0 20px;
+  }
+  .phase-hero-content {
+    margin-top: auto;
+    margin-bottom: 110px;
+  }
   .phase-text-block {
-    padding: 24px;
-    margin-top: -60px; /* shift text up slightly to avoid HUD */
+    padding: 20px;
+    margin-top: auto;
+    margin-bottom: 110px;
+    background: rgba(5, 5, 5, 0.7);
+    border-color: rgba(255, 255, 255, 0.05);
   }
   .hero-cta-group {
     flex-direction: column;
