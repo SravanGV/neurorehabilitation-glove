@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
       
       const img = images[index];
       
-      // Calculate responsive object-fit contain style manually in 2D context
+      // Calculate responsive object-fit cover style manually
       const imgWidth = img.naturalWidth;
       const imgHeight = img.naturalHeight;
       const canvasWidth = canvas.width;
@@ -127,18 +127,19 @@ document.addEventListener('DOMContentLoaded', () => {
       
       let renderWidth, renderHeight, x, y;
       
+      // Use cover behavior to fill the screen (great for mobile)
       if (imgRatio > canvasRatio) {
-        // Image is wider than canvas
+        // Image is proportionally wider than canvas
+        renderHeight = canvasHeight;
+        renderWidth = canvasHeight * imgRatio;
+        x = (canvasWidth - renderWidth) / 2;
+        y = 0;
+      } else {
+        // Image is proportionally taller than canvas
         renderWidth = canvasWidth;
         renderHeight = canvasWidth / imgRatio;
         x = 0;
         y = (canvasHeight - renderHeight) / 2;
-      } else {
-        // Image is taller than canvas
-        renderWidth = canvasHeight * imgRatio;
-        renderHeight = canvasHeight;
-        x = (canvasWidth - renderWidth) / 2;
-        y = 0;
       }
       
       context.drawImage(img, x, y, renderWidth, renderHeight);
