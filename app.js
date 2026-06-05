@@ -111,78 +111,29 @@ document.addEventListener('DOMContentLoaded', () => {
   // Render a specific frame onto the canvas
   const renderFrame = (index) => {
     if (images[index] && images[index].complete) {
-      // Clear canvas
-      context.clearRect(0, 0, canvas.width, canvas.height);
-      
       const img = images[index];
       
-      // Calculate responsive object-fit cover style manually
-      const imgWidth = img.naturalWidth;
-      const imgHeight = img.naturalHeight;
-      const canvasWidth = canvas.width;
-      const canvasHeight = canvas.height;
-      
-      const imgRatio = imgWidth / imgHeight;
-      const canvasRatio = canvasWidth / canvasHeight;
-      
-      let renderWidth, renderHeight, x, y;
-      
-      // Calculate base 'contain' dimensions
-      if (imgRatio > canvasRatio) {
-        renderWidth = canvasWidth;
-        renderHeight = canvasWidth / imgRatio;
-      } else {
-        renderHeight = canvasHeight;
-        renderWidth = canvasHeight * imgRatio;
+      // Ensure canvas matches image's native resolution exactly once
+      if (canvas.width !== img.naturalWidth) {
+        canvas.width = img.naturalWidth;
+        canvas.height = img.naturalHeight;
       }
-      
-      // Apply custom mobile scaling to zoom in and make the glove larger
-      let scaleFactor = 1;
-      if (window.innerWidth <= 768) {
-        scaleFactor = 1.6; // Scale up by 60% on mobile screens to fill more space
-      }
-      
-      renderWidth *= scaleFactor;
-      renderHeight *= scaleFactor;
-      
-      // Center the scaled image
-      x = (canvasWidth - renderWidth) / 2;
-      y = (canvasHeight - renderHeight) / 2;
-      
-      context.drawImage(img, x, y, renderWidth, renderHeight);
+
+      // Draw exactly at native resolution, CSS will handle responsive scaling!
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      context.drawImage(img, 0, 0, canvas.width, canvas.height);
       
       // Update HUD frame count
       hudFrame.textContent = `${formatFrameNum(index + 1)} / ${formatFrameNum(frameCount)}`;
     }
   };
 
-  let lastWidth = window.innerWidth;
-
-  // Resize canvas to match screen resolution and device pixel ratio (for retina clarity)
-  const resizeCanvas = () => {
-    // Prevent mobile layout jumping: ignore height-only resizes (URL bar hide/show)
-    const isMobile = window.innerWidth <= 768;
-    if (isMobile && window.innerWidth === lastWidth && canvas.width > 0) {
-      return;
-    }
-    lastWidth = window.innerWidth;
-
-    const dpr = window.devicePixelRatio || 1;
-    canvas.width = window.innerWidth * dpr;
-    canvas.height = window.innerHeight * dpr;
-    // Removed context.scale(dpr, dpr) to prevent double-scaling bug
-    
-    // Set display style width/height
-    canvas.style.width = `${window.innerWidth}px`;
-    canvas.style.height = `${window.innerHeight}px`;
-    
+  // Handle window resizing without completely recalculating the canvas buffer
+  window.addEventListener('resize', () => {
     if (deviceState.isLoaded) {
       renderFrame(Math.round(deviceState.currentFrame));
     }
-  };
-
-  window.addEventListener('resize', resizeCanvas);
-  resizeCanvas(); // Run once
+  });
 
   // Start preloading
   preloadImages();

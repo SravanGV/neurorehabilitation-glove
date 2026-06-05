@@ -308,12 +308,13 @@ nav.scrolled {
 
 /* The full-screen background image canvas */
 #device-canvas {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  /* Will be handled natively by browser */
   z-index: 1;
   background-color: var(--bg-primary);
 }
@@ -1443,6 +1444,11 @@ section:not(.canvas-wrapper) {
   }
   .hero-eyebrow {
     margin-bottom: 16px;
+  }
+  #device-canvas {
+    object-fit: contain;
+    transform: scale(1.6);
+    transform-origin: center center;
   }
   .phase-overlay {
     padding: 0 20px;
