@@ -298,7 +298,7 @@ nav.scrolled {
   position: sticky;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   height: 100dvh;
   overflow: hidden;
@@ -309,10 +309,11 @@ nav.scrolled {
 
 /* The full-screen background image canvas */
 #device-canvas {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   height: 100dvh;
   object-fit: cover;
+  object-position: center;
   position: absolute;
   top: 0;
   left: 0;
